@@ -2,7 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/moneyverse/moneyverse/bin
 /.vs/moneyverse/v15/.suo
 /moneyverse/packages
 /moneyverse/moneyverse/obj/Debug
