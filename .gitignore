@@ -3,3 +3,12 @@
 ################################################################################
 
 /moneyverse/moneyverse/bin
+/.vs/moneyverse/v15/.suo
+/moneyverse/packages
+/moneyverse/moneyverse/obj/Debug
+/**/*.mdf
+/moneyverse/.vs/moneyverse/DesignTimeBuild
+/moneyverse/.vs/moneyverse/v15/Server/sqlite3
+/moneyverse/.vs/moneyverse/v15
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
