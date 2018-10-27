@@ -2,7 +2,7 @@
     <div class="sidebar-nav navbar-collapse">
         <ul class="nav in" id="side-menu">
             <li>
-                <button class="btn btn-success" data-toggle="modal" data-target="#addBankModal">Add Bank <i class="fa fa-plus fa-fw"></i></button>
+                <button class="btn btn-success" style="margin:15px;" data-toggle="modal" data-target="#addBankModal">Add Bank <i class="fa fa-plus fa-fw"></i></button>
             </li>
             <li class="active" ng-repeat="bank in banks">
                 <span>
@@ -10,7 +10,7 @@
                 </span>
                 <ul class="nav nav-second-level">
                     <li ng-repeat="account in bank.accounts" ng-class="{active: selectedBank == bank && selectedAccount == account}">
-                        <a ui-sref="dashboard.home" ng-click="selectAccount(account, bank.name)">{{account.display_name}}</a>
+                        <a ui-sref="dashboard.home" ng-click="selectAccount(account, bank)">{{account.display_name}}</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

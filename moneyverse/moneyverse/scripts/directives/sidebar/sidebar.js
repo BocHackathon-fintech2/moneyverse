@@ -16,6 +16,14 @@ angular.module('sbAdminApp')
       scope: {
       },
         controller: function ($scope) {
+
+            function setBanksIfNothingIsDefined() {
+                    if (!$rootScope.selectedBank) {
+                        $rootScope.selectedBank = $scope.banks[0];
+                        $rootScope.selectedAccount = $scope.banks[0].accounts[0];
+                    }
+            }
+
             $scope.banks = [];
             $http.get('TrueLayer/GetAccounts').then(function (response) {
                 if (response && response.data && response.data !== 'null') {
@@ -24,6 +32,7 @@ angular.module('sbAdminApp')
                         accounts: response.data
                     })
                     $rootScope.banks = $scope.banks;
+                    setBanksIfNothingIsDefined()
                 }
             })
             $http.get('Boc/GetAccounts').then(function (response) {
@@ -36,6 +45,7 @@ angular.module('sbAdminApp')
                         accounts: response.data
                     })
                     $rootScope.banks = $scope.banks;
+                    setBanksIfNothingIsDefined()
                 }
             })
         $scope.selectedMenu = 'dashboard';
