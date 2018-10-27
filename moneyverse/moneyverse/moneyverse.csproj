@@ -115,6 +115,7 @@
     <Content Include="js\sb-admin-2.js" />
     <Content Include="robots.txt" />
     <Content Include="scripts\app.js" />
+    <Content Include="scripts\controllers\chartsCtrl.js" />
     <Content Include="scripts\controllers\transferwiseCtrl.js" />
     <Content Include="scripts\controllers\addBankCtrl.js" />
     <Content Include="scripts\controllers\chartContoller.js" />
@@ -192,6 +193,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

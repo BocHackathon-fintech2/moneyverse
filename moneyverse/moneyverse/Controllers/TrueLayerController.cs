@@ -8,6 +8,8 @@ using System.Web.Caching;
 using System.Web.Http;
 using System.Runtime.Caching;
 using moneyverse.Models.TrueLayer;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace moneyverse.Controllers
 {
@@ -32,7 +34,15 @@ namespace moneyverse.Controllers
                 var a = TrueLayerHelper.GetAccounts();
                 return a;
             }
-            return null;    
+            return null;
+        }
+
+        [HttpGet]
+        [Route("TrueLayer/GetTransactions")]
+        public object GetTransactions()
+        {
+            return JsonConvert.DeserializeObject(File.ReadAllText(@"C:\Users\micha\source\repos\BocHackathon-fintech2\moneyverse\moneyverse\moneyverse\App_Data\data.json"));
+
         }
     }
 }
