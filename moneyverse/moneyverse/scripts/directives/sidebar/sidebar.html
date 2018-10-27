@@ -5,10 +5,10 @@
                 <button class="btn btn-success" data-toggle="modal" data-target="#addBankModal">Add Bank <i class="fa fa-plus fa-fw"></i></button>
             </li>
             <li class="active" ng-repeat="bank in banks">
-                <a href="" ng-click="check(1+$index)">
-                    <i class="fa fa-bank fa-fw"></i> {{bank.name}}<span class="fa arrow"></span>
-                </a>
-                <ul class="nav nav-second-level" collapse="collapseVar!=1+$index">
+                <span>
+                    <i class="fa fa-bank fa-fw"></i> {{bank.name}}
+                </span>
+                <ul class="nav nav-second-level">
                     <li ng-repeat="account in bank.accounts">
                         <a href="">{{account.display_name}}</a>
                     </li>

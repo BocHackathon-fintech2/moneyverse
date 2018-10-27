@@ -18,14 +18,14 @@ angular.module('sbAdminApp')
         controller: function ($scope) {
             $scope.banks = [];
             $http.get('TrueLayer/GetAccounts').then(function (response) {
-                if (response && response.data)
+                if (response && response.data && response.data !== 'null')
                     $scope.banks.push({
                         name: 'Mock Bank',
                         accounts: response.data
                     })
             })
             $http.get('Boc/GetAccounts').then(function (response) {
-                if (response && response.data) {
+                if (response && response.data && response.data !== 'null') {
                     response.data.forEach(function (item) {
                         item.display_name = item.accountName;
                     })
