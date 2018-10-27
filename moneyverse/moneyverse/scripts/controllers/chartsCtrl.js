@@ -62,13 +62,6 @@ angular.module("sbAdminApp").controller("DCCtrl", [
             });
             s.typeGroup = s.type.group();
 
-            // Transactions per description
-            ///////////////////////////////////////////////////
-            s.description = ndx.dimension(function (d) {
-                return d.description;
-            });
-            s.descriptionGroup = s.description.group();
-
             // Transactions per merchant
             ///////////////////////////////////////////////////
             s.merchant = ndx.dimension(function (d) {

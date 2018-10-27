@@ -11,6 +11,26 @@ body {
   padding-right: 15px;
 }
 
+rect.extent {
+  fill-opacity: 0.1;
+}
+
+.axis.y path.domain {
+  transform: scale(0.2, 1);
+}
+
+.axis.x path.domain {
+  transform: scale(1, 0.2);
+}
+
+.axis.y .tick {
+  display: none;
+}
+
+.resize path {
+  fill-opacity: 0.6;
+}
+
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
@@ -80,25 +100,4 @@ body {
 .nav>li.active>a {
 text-decoration: none;
 background-color: #eee;
-}
-
-
-/*
- * override the default CSS as an example
- */
-
-#loading-bar .bar {
-    background: #2c3e50;
-}
-
-#loading-bar-spinner .spinner-icon {
-    border-top-color: #2c3e50;
-    border-left-color: #2c3e50;
-}
-
-#loading-bar .peg {
-    -moz-box-shadow: #2c3e50 1px 0 6px 1px;
-    -ms-box-shadow: #2c3e50 1px 0 6px 1px;
-    -webkit-box-shadow: #2c3e50 1px 0 6px 1px;
-    box-shadow: #2c3e50 1px 0 6px 1px;
 }
