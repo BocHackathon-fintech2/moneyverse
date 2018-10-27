@@ -39,10 +39,11 @@ namespace moneyverse.Controllers
 
         [HttpGet]
         [Route("TrueLayer/GetTransactions")]
-        public object GetTransactions()
+        public List<TrueLayerTransaction> GetTransactions(string accountId, bool isTruelayer)
         {
-            return JsonConvert.DeserializeObject(File.ReadAllText(@"C:\Users\micha\source\repos\BocHackathon-fintech2\moneyverse\moneyverse\moneyverse\App_Data\data.json"));
-
+            if (!isTruelayer)
+                return new List<TrueLayerTransaction> { };
+            return TrueLayerHelper.GetTransactions(accountId);
         }
     }
 }
