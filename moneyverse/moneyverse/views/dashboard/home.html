@@ -1,49 +1,134 @@
 <div>
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-    <!-- /.row -->
-    <div class="row">
-        
-        <stats number="6" comments="New comments!" colour="primary" type="comments"></stats>
-        <stats number="12" comments="New tasks!" colour="primary" type="user"></stats>
-        <stats number="18" comments="New orders!" colour="yellow" type="shopping-cart"></stats>
-        <stats number="24" comments="Support tickets!" colour="red" type="support"></stats>
-        {{newData}}
-    </div>
-    
-    <!-- /.panel -->
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
+    <div ng-if="!selectedAccount">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="jumbotron">
+                    <h4>Please select an account from the menu on the left</h4>
+                    <p>You can use the <strong>Add Bank</strong> button to add your accounts and start exploring your finances!</p>
                 </div>
-                <!-- /.panel-heading -->
-                <timeline></timeline>
-                <!-- /.panel-body -->
             </div>
-            <!-- /.panel -->
+            <!-- /.col-lg-12 -->
         </div>
-        <!-- /.col-lg-8 -->
-        <div class="col-lg-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-bell fa-fw"></i> Notifications Panel
-                </div>
-                <!-- /.panel-heading -->
-                <notifications></notifications> 
-                <!-- /.panel-body -->
+    </div>
+    <div ng-if="!!selectedAccount">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{{selectedBank.name}} - {{selectedAccount.display_name}}</h1>
+                <stats colour="success" number="New!" comments="You can now use Transferwise to send money to accounts in other currencies" type="exchange-alt" class="pull-right"></stats>
             </div>
-            <!-- /.panel -->
+            <!-- /.col-lg-12 -->
 
-            <chat></chat>
-             <!-- /.panel .chat-panel -->
+        <div class="row" style="font-size: 11px;" ng-controller="DCCtrl">
+            <div class="container">
+                <div class="col-lg-8">
+                    <h2>Transactions to {{date}}</h2>
+                </div>
+
+                <div class="col-lg-6" style="margin-bottom: 20px;">
+                    <div class="dc-data-count" dc-chart="dataCount" dc-dimension="ndx" dc-group="all">
+                        <span class="filter-count"></span>&nbsp;selected
+                        out of&nbsp;<span class="total-count"></span>&nbsp;records | <a ng-click="resetAll()">Reset All</a>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 20px;">
+                    <div dc-chart="barChart"
+                         dc-name="'volumeChart'"
+                         dc-width="850"
+                         dc-height="40"
+                         dc-margins="{top: 0, right: 50, bottom: 20, left: 40}"
+                         dc-dimension="day"
+                         dc-group="volumeByDayGroup"
+                         dc-x="d3.time.scale().domain([Date(2018, 8, 1), Date(2018, 9, 30)])"
+                         dc-x-units="d3.time.days"
+                         dc-elastic-y="true">
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-xs-6 dc-chart"
+                         dc-chart="pieChart"
+                         dc-width="360"
+                         dc-height="360"
+                         dc-radius="180"
+                         dc-dimension="category"
+                         dc-group="categoryGroup">
+                        <strong>Transactions by Category</strong><a class="reset">reset</a>
+                    </div>
+
+                    <div class="col-xs-6 dc-chart" style="padding-left: 80px"
+                         dc-chart="rowChart"
+                         dc-width="360"
+                         dc-height="360"
+                         dc-margins="{top: 20, left: 10, right: 10, bottom: 20}"
+                         dc-group="dayOfWeekGroup"
+                         dc-dimension="dayOfWeek"
+                         dc-ordinal-colors="['#3182bd', '#6baed6', '#9ecae1', '#c6dbef', '#dadaeb']"
+                         dc-elastic-x="true"
+                         dc-post-setup-chart="dayOfWeekPostSetupChart">
+                        <strong>Day of Week</strong><a class="reset">reset</a>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="row" style="margin-left: 30px; margin-bottom: 20px;">
+                    <div class="col-xs-4 dc-chart"
+                         dc-chart="pieChart"
+                         dc-width="180"
+                         dc-height="180"
+                         dc-radius="80"
+                         dc-dimension="type"
+                         dc-group="typeGroup">
+                        <strong>Transactions by Type</strong><a class="reset">reset</a>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="col-xs-4 dc-chart"
+                         dc-chart="pieChart"
+                         dc-width="180"
+                         dc-height="180"
+                         dc-radius="80"
+                         dc-dimension="merchant"
+                         dc-group="merchantGroup">
+                        <strong>Transactions by Merchant Name</strong><a class="reset">reset</a>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="col-xs-4 dc-chart"
+                         dc-chart="pieChart"
+                         dc-width="180"
+                         dc-height="180"
+                         dc-radius="80"
+                         dc-dimension="description"
+                         dc-group="descriptionGroup">
+                        <strong>Transactions by Description</strong><a class="reset">reset</a>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <table class="table table-hover dc-data-table"
+                           dc-chart="dataTable"
+                           dc-dimension="dateDimension"
+                           dc-group="tableGroup"
+                           dc-size="20"
+                           dc-post-setup-chart="tablePostSetupChart">
+                        <thead>
+                            <tr class="header">
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Merchant Name</th>
+                                <th>Category</th>
+                                <th>Type</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
         </div>
-        <!-- /.col-lg-4 -->
+        <!-- /.row -->
     </div>
-    <!-- /.row -->
 </div>
