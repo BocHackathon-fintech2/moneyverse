@@ -11,6 +11,26 @@ body {
   padding-right: 15px;
 }
 
+rect.extent {
+  fill-opacity: 0.1;
+}
+
+.axis.y path.domain {
+  transform: scale(0.2, 1);
+}
+
+.axis.x path.domain {
+  transform: scale(1, 0.2);
+}
+
+.axis.y .tick {
+  display: none;
+}
+
+.resize path {
+  fill-opacity: 0.6;
+}
+
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
