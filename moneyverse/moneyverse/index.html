@@ -37,6 +37,7 @@
     <script src="scripts/app.js"></script>
 
     <script src="scripts/controllers/addBankCtrl.js"></script>
+    <script src="scripts/controllers/transferwiseCtrl.js"></script>
     <script src="js/sb-admin-2.js"></script>
     <!-- endbuild -->
 
@@ -73,6 +74,24 @@
                             <a ng-click="reloadWatch('truelayer')" href="https://auth.truelayer.com/?response_type=code&client_id=demoapp-zke4&redirect_uri=http://localhost:50033/TrueLayer/VerifyCode&scope=info%20accounts%20balance%20transactions&nonce=nonce&state=state&enable_mock=true" target="_blank" class="btn btn-primary"><i class="fa fa-bank fa-fw"></i> TrueLayer</a>
                             <a ng-click="reloadWatch('boc')" ng-href="{{url}}" class="btn btn-primary" target="_blank"><i class="fa fa-bank fa-fw"></i> Bank of Cyprus</a>
                             <button type="button" class="btn btn-default" ng-click="stop()">Cancel</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+
+            <div ng-controller="transferwiseCtrl" class="modal" id="transferwiseModal" tabindex="-1" role="dialog" aria-labelledby="addBankModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">{{title}}</h4>
+                        </div>
+                        <div class="modal-body" style="height:200px;">
+                            <div ng-show="state == 'login'">
+                                <a ng-href="{{url}}" class="btn btn-success" target="_blank">Login with Transferwise <i class="fa fa-exchange fa-fw"></i></a>
+                            </div>
                         </div>
                     </div>
                     <!-- /.modal-content -->

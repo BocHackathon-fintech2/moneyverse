@@ -115,6 +115,7 @@
     <Content Include="js\sb-admin-2.js" />
     <Content Include="robots.txt" />
     <Content Include="scripts\app.js" />
+    <Content Include="scripts\controllers\transferwiseCtrl.js" />
     <Content Include="scripts\controllers\addBankCtrl.js" />
     <Content Include="scripts\controllers\chartContoller.js" />
     <Content Include="scripts\controllers\form.js" />
@@ -158,12 +159,15 @@
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BocController.cs" />
+    <Compile Include="Controllers\TransferwiseController.cs" />
     <Compile Include="Controllers\TrueLayerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CurlHelper.cs" />
     <Compile Include="Helpers\ObjectBinder.cs" />
     <Compile Include="Helpers\BocHelper.cs" />
+    <Compile Include="Helpers\TransferwiseHelper.cs" />
     <Compile Include="Helpers\TrueLayerHelper.cs" />
     <Compile Include="Models\Boc\BocAccount.cs" />
     <Compile Include="Models\TrueLayer\TrueLayerAccount.cs" />
