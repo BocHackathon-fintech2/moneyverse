@@ -127,11 +127,11 @@
                             <div ng-show="state == 'quote'">
                                 <from role="form">
                                     <div class="form-group" style="margin-top:24px;">
-                                        <label>Send this amount in <strong>EUR</strong></label>
+                                        <label>The recipient will get this in <strong>GBP</strong></label>
                                         <input type="text" class="form-control" ng-model="amount" ng-model-options="{debounce: 1000}" ng-change="getQuote()" />
                                     </div>
                                     <div class="form-group" style="margin-top:24px;">
-                                        <label>The recipient will get this in <strong>GBP</strong></label>
+                                        <label>Send this amount in <strong>EUR</strong></label>
                                         <input type="text" class="form-control" ng-disabled="true" ng-model="targetAmount"/>
                                     </div>
                                 </from>

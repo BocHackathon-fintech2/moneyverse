@@ -73,7 +73,7 @@ angular.module('sbAdminApp')
                 $scope.targetAmount = undefined;
             $http.get('Transferwise/Quote?amount=' + $scope.amount).then(function (response) {
                 if (response && response.data && response.data.targetAmount)
-                    $scope.targetAmount = response.data.targetAmount
+                    $scope.targetAmount = response.data.sourceAmount
             })
         }
 

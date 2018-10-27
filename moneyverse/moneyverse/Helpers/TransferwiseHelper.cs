@@ -39,7 +39,7 @@ namespace moneyverse.Helpers
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("Content-Type", "application/json");
             request.AddHeader("Authorization", $@"Bearer {GetToken()}");
-            request.AddParameter("undefined", $"{{ \n          \"profile\": \"{profileId}\",\n          \"source\": \"EUR\",\n          \"target\": \"GBP\",\n          \"rateType\": \"FIXED\",\n          \"sourceAmount\": {amount},\n          \"type\": \"REGULAR\"\n        }}", ParameterType.RequestBody);
+            request.AddParameter("undefined", $"{{ \n          \"profile\": {profileId},\n          \"source\": \"EUR\",\n          \"target\": \"GBP\",\n          \"rateType\": \"FIXED\",\n          \"targetAmount\": {amount},\n          \"type\": \"REGULAR\"\n        }}", ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
             return JsonConvert.DeserializeObject<TransferwiseQuote>(response.Content);
         }
@@ -52,7 +52,7 @@ namespace moneyverse.Helpers
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("Content-Type", "application/json");
             request.AddHeader("Authorization", $@"Bearer {GetToken()}");
-            request.AddParameter("undefined", $"{{ \n          \"currency\": \"GBP\", \n          \"type\": \"sort_code\", \n          \"profile\": \"{profileId}\", \n          \"accountHolderName\": \"John Doe\",\n           \"details\": {{ \n              \"legalType\": \"PRIVATE\",\n              \"sortCode\": \"40-30-20\", \n              \"accountNumber\": \"12345678\" \n           }} \n         }}", ParameterType.RequestBody);
+            request.AddParameter("undefined", $"{{ \n          \"currency\": \"GBP\", \n          \"type\": \"sort_code\", \n          \"profile\": {profileId}, \n          \"accountHolderName\": \"John Doe\",\n           \"details\": {{ \n              \"legalType\": \"PRIVATE\",\n              \"sortCode\": \"40-30-20\", \n              \"accountNumber\": \"12345678\" \n           }} \n         }}", ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
             return JsonConvert.DeserializeObject<TransferwiseRecipient>(response.Content);
         }
@@ -65,7 +65,7 @@ namespace moneyverse.Helpers
             request.AddHeader("cache-control", "no-cache");
             request.AddHeader("Content-Type", "application/json");
             request.AddHeader("Authorization", $@"Bearer {GetToken()}");
-            request.AddParameter("undefined", $"{{ \n          \"targetAccount\": \"{targetAccount}\",   \n          \"quote\": \"{quoteId}\",\n          \"customerTransactionId\": \"{Guid.NewGuid()}\",\n          \"details\" : {{\n              \"reference\" : \"moneyverse\",\n              \"transferPurpose\": \"verification.transfers.purpose.pay.bills\",\n              \"sourceOfFunds\": \"verification.source.of.funds.other\"\n            }} \n         }}", ParameterType.RequestBody);
+            request.AddParameter("undefined", $"{{ \n          \"targetAccount\": {targetAccount},   \n          \"quote\": {quoteId},\n          \"customerTransactionId\": \"{Guid.NewGuid()}\",\n          \"details\" : {{\n              \"reference\" : \"moneyverse\",\n              \"transferPurpose\": \"verification.transfers.purpose.pay.bills\",\n              \"sourceOfFunds\": \"verification.source.of.funds.other\"\n            }} \n         }}", ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
             return ((dynamic)JsonConvert.DeserializeObject(response.Content)).id;
         }
