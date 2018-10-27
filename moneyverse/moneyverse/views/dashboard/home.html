@@ -101,38 +101,29 @@
                 <div class="clearfix"></div>
             </div>
 
-            <div class="row" style="margin-left: 30px; margin-bottom: 20px;">
-                <div class="col-xs-4 dc-chart"
+            <div class="row" style=" margin-bottom: 20px;">
+                <div class="col-xs-6">
+                    <strong style="padding-left: 90px; padding-top: 40px; display: block">Transactions by Type</strong><br />
+                    <div class="dc-chart"
                         dc-chart="pieChart"
-                        dc-width="180"
-                        dc-height="180"
-                        dc-radius="80"
+                        dc-width="360"
+                        dc-height="360"
+                        dc-radius="180"
                         dc-dimension="type"
                         dc-group="typeGroup">
-                    <strong>Transactions by Type</strong><a class="reset">reset</a>
-                    <div class="clearfix"></div>
+                    </div>
                 </div>
 
-                <div class="col-xs-4 dc-chart"
+                <div class="col-xs-6">
+                    <strong  style="padding-left: 90px; padding-top: 40px; display: block">Transactions by Merchant Name</strong><br />
+                    <div class="dc-chart"
                         dc-chart="pieChart"
-                        dc-width="180"
-                        dc-height="180"
-                        dc-radius="80"
+                        dc-width="360"
+                        dc-height="360"
+                        dc-radius="180"
                         dc-dimension="merchant"
                         dc-group="merchantGroup">
-                    <strong>Transactions by Merchant Name</strong><a class="reset">reset</a>
-                    <div class="clearfix"></div>
-                </div>
-
-                <div class="col-xs-4 dc-chart"
-                        dc-chart="pieChart"
-                        dc-width="180"
-                        dc-height="180"
-                        dc-radius="80"
-                        dc-dimension="description"
-                        dc-group="descriptionGroup">
-                    <strong>Transactions by Description</strong><a class="reset">reset</a>
-                    <div class="clearfix"></div>
+                    </div>
                 </div>
             </div>
         </div>
