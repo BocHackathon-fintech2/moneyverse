@@ -8,14 +8,33 @@
  */
 
 angular.module('sbAdminApp')
-  .directive('sidebar',['$location',function() {
+  .directive('sidebar',['$http',function($http) {
     return {
       templateUrl:'scripts/directives/sidebar/sidebar.html',
       restrict: 'E',
       replace: true,
       scope: {
       },
-      controller:function($scope){
+        controller: function ($scope) {
+            $scope.banks = [];
+            $http.get('TrueLayer/GetAccounts').then(function (response) {
+                if (response && response.data)
+                    $scope.banks.push({
+                        name: 'Mock Bank',
+                        accounts: response.data
+                    })
+            })
+            $http.get('Boc/GetAccounts').then(function (response) {
+                if (response && response.data) {
+                    response.data.forEach(function (item) {
+                        item.display_name = item.accountName;
+                    })
+                    $scope.banks.push({
+                        name: 'Bank of Cyprus',
+                        accounts: response.data
+                    })
+                }
+            })
         $scope.selectedMenu = 'dashboard';
         $scope.collapseVar = 0;
         $scope.multiCollapseVar = 0;

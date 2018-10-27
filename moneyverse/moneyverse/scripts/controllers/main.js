@@ -8,7 +8,7 @@
  */
 angular.module('sbAdminApp')
     .controller('MainCtrl', function ($scope, $position, $http) {
-        $http.get('Account/VerifyCode').then(function (response) {
+        $http.get('TrueLayer/GetAccounts').then(function (response) {
             $scope.newData = response.data;
         })
   });

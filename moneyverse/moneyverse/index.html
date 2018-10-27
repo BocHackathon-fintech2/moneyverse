@@ -1,6 +1,6 @@
-<!doctype html>
+﻿<!doctype html>
 <html class="no-js">
-  <head>
+<head>
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
-    
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/sb-admin-2.css">
@@ -20,7 +19,6 @@
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.min.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
     <!-- endbuild -->
-    
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -35,39 +33,52 @@
     <script src="bower_components/Chart.js/Chart.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="js/sb-admin-2.js"></script>
+    <script src="scripts/app.js"></script>
+
+    <script src="scripts/controllers/addBankCtrl.js"></script>
+    <script src="js/sb-admin-2.js"></script>
     <!-- endbuild -->
 
-
-
     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
     </script>
     <!-- Custom CSS -->
-
     <!-- Custom Fonts -->
-
     <!-- Morris Charts CSS -->
     <!-- <link href="styles/morrisjs/morris.css" rel="stylesheet"> -->
 
-
-    </head>
+</head>
    
     <body>
 
-    <div ng-app="sbAdminApp">
+        <div ng-app="sbAdminApp">
+            <div ui-view></div>
 
-        <div ui-view></div>
-
-    </div>
+            <div ng-controller="addBankCtrl" class="modal" id="addBankModal" tabindex="-1" role="dialog" aria-labelledby="addBankModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Add your bank account</h4>
+                        </div>
+                        <div class="modal-body" style="height:200px;">
+                            <a href="https://auth.truelayer.com/?response_type=code&client_id=demoapp-zke4&redirect_uri=http://localhost:50033/TrueLayer/VerifyCode&scope=info%20accounts%20balance%20transactions&nonce=nonce&state=state&enable_mock=true" target="_blank" class="btn btn-primary"><i class="fa fa-bank fa-fw"></i> TrueLayer</a>
+                            <a ng-href="{{url}}" class="btn btn-primary"><i class="fa fa-bank fa-fw"></i> Bank of Cyprus</a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+        </div>
 
     </body>
 
