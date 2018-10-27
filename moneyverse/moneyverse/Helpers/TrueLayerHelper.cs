@@ -32,5 +32,16 @@ namespace moneyverse.Helpers
             IRestResponse response = client.Execute(request);
             return JsonConvert.DeserializeObject<List<TrueLayerAccount>>((((dynamic)JsonConvert.DeserializeObject(response.Content)).results.ToString()));
         }
+
+        internal static List<TrueLayerTransaction> GetTransactions(string accountId)
+        {
+            var client = new RestClient($"https://api.truelayer.com/data/v1/accounts/{accountId}/transactions");
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("Postman-Token", "68f32fb1-3c8d-4ed3-8561-9f59b3a8c0d3");
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("Authorization", $"Bearer {GetToken()}");
+            IRestResponse response = client.Execute(request);
+            return JsonConvert.DeserializeObject<List<TrueLayerTransaction>>(((dynamic)JsonConvert.DeserializeObject(response.Content)).results.ToString());
+        }
     }
 }

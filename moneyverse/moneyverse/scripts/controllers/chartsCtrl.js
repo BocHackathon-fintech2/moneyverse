@@ -8,15 +8,17 @@
  */
 angular.module("sbAdminApp").controller("DCCtrl", [
     "$scope",
-    function ($scope) {
-        d3.json("TrueLayer/GetTransactions", function (data) {
+    "$rootScope",
+    function ($scope, $rootScope) {
+        $rootScope.$watch('selectedAccount', function (n) {
+            d3.json("TrueLayer/GetTransactions?accountId=" + $rootScope.selectedAccount.account_id + "&isTruelayer=" + ($rootScope.selectedBank.name != 'Bank of Cyprus'), function (data) {
             var dateFormat = d3.time.format("%Y-%m-%dT%H:%M:%S+03:00");
             var numberFormat = d3.format(".2f");
             var s = $scope;
 
             s.date = data.toDate;
 
-            data.transactions.forEach(function (d) {
+            data.forEach(function (d) {
                 d.dd = dateFormat.parse(d.timestamp);
                 d.day = d3.time.day(d.dd);
                 d.month = d3.time.month(d.dd);
@@ -31,7 +33,7 @@ angular.module("sbAdminApp").controller("DCCtrl", [
             }
 
             // Create Crossfilter Dimensions and Groups
-            var ndx = (s.ndx = crossfilter(data.transactions));
+            var ndx = (s.ndx = crossfilter(data));
             var all = (s.all = ndx.groupAll());
 
             // Transactions timeline
@@ -143,8 +145,10 @@ angular.module("sbAdminApp").controller("DCCtrl", [
             s.resetAll = function () {
                 dc.filterAll();
                 dc.redrawAll();
-            };
+                };
+                s.resetAll();
             $scope.$apply();
         });
+        })
     }
 ]);

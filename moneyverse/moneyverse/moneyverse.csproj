@@ -175,6 +175,7 @@
     <Compile Include="Models\Transferwise\TransferwiseQuote.cs" />
     <Compile Include="Models\Transferwise\TransferwiseRecipient.cs" />
     <Compile Include="Models\TrueLayer\TrueLayerAccount.cs" />
+    <Compile Include="Models\TrueLayer\TrueLayerTransaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
