@@ -8,7 +8,7 @@
  */
 
 angular.module('sbAdminApp')
-  .directive('sidebar',['$http',function($http) {
+  .directive('sidebar',['$http', '$rootScope',function($http, $rootScope) {
     return {
       templateUrl:'scripts/directives/sidebar/sidebar.html',
       restrict: 'E',
@@ -18,11 +18,13 @@ angular.module('sbAdminApp')
         controller: function ($scope) {
             $scope.banks = [];
             $http.get('TrueLayer/GetAccounts').then(function (response) {
-                if (response && response.data && response.data !== 'null')
+                if (response && response.data && response.data !== 'null') {
                     $scope.banks.push({
                         name: 'Mock Bank',
                         accounts: response.data
                     })
+                    $rootScope.banks = $scope.banks;
+                }
             })
             $http.get('Boc/GetAccounts').then(function (response) {
                 if (response && response.data && response.data !== 'null') {
@@ -33,6 +35,7 @@ angular.module('sbAdminApp')
                         name: 'Bank of Cyprus',
                         accounts: response.data
                     })
+                    $rootScope.banks = $scope.banks;
                 }
             })
         $scope.selectedMenu = 'dashboard';
@@ -46,6 +49,11 @@ angular.module('sbAdminApp')
           else
             $scope.collapseVar = x;
         };
+
+            $scope.selectAccount = function (account, bank) {
+                $rootScope.selectedAccount = account;
+                $rootScope.selectedBank = bank;
+            }
         
         $scope.multiCheck = function(y){
           
