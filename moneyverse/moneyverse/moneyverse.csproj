@@ -111,6 +111,14 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Gruntfile.js" />
+    <Content Include="Images\1280px-Barclays_logo.svg.png" />
+    <Content Include="Images\53d73ec4-0c9b-4bab-b4c6-89279ab4a7f5 - Copy.png" />
+    <Content Include="Images\BankOfCyprus.png" />
+    <Content Include="Images\HSBC_MASTERBRAND_UK_WW_RGB.png" />
+    <Content Include="Images\moneyverse logo small.png" />
+    <Content Include="moneyverse_logo_small_ico_GqK_icon.ico" />
+    <Content Include="Images\TransferWise.png" />
+    <Content Include="Images\truelayerlogo800_thumb650.jpg" />
     <Content Include="index.html" />
     <Content Include="js\sb-admin-2.js" />
     <Content Include="robots.txt" />
