@@ -1,0 +1,123 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">DC Charts</h1>
+    </div>
+</div>
+
+<div class="row" style="font-size: 11px;">
+    <div class="container" ng-controller="DCCtrl">
+        <div class="col-lg-8">
+            <h2>Transactions to {{date}}</h2>
+        </div>
+
+        <div class="col-lg-6" style="margin-bottom: 20px;">
+            <div class="dc-data-count" dc-chart="dataCount" dc-dimension="ndx" dc-group="all">
+                <span class="filter-count"></span>&nbsp;selected
+                out of&nbsp;<span class="total-count"></span>&nbsp;records | <a ng-click="resetAll()">Reset All</a>
+            </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 20px;">
+            <div
+                dc-chart="barChart"
+                dc-name="'volumeChart'"
+                dc-width="850"
+                dc-height="40"
+                dc-margins="{top: 0, right: 50, bottom: 20, left: 40}"
+                dc-dimension="day"
+                dc-group="volumeByDayGroup"
+                dc-x="d3.time.scale().domain([Date(2018, 8, 1), Date(2018, 9, 30)])"
+                dc-x-units="d3.time.days"
+                dc-elastic-y="true"
+                >
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="row" style="margin-bottom: 20px;">
+            <div
+                class="col-xs-6 dc-chart"
+                dc-chart="pieChart"
+                dc-width="360"
+                dc-height="360"
+                dc-radius="180"
+                dc-dimension="category"
+                dc-group="categoryGroup">
+                <strong>Transactions by Category</strong><a class="reset">reset</a>
+            </div>
+
+            <div class="col-xs-6 dc-chart" style="padding-left: 80px"
+                dc-chart="rowChart"
+                dc-width="360"
+                dc-height="360"
+                dc-margins="{top: 20, left: 10, right: 10, bottom: 20}"
+                dc-group="dayOfWeekGroup"
+                dc-dimension="dayOfWeek"
+                dc-ordinal-colors="['#3182bd', '#6baed6', '#9ecae1', '#c6dbef', '#dadaeb']"
+                dc-elastic-x="true"
+                dc-post-setup-chart="dayOfWeekPostSetupChart">
+                    <strong>Day of Week</strong><a class="reset">reset</a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="row" style="margin-left: 30px; margin-bottom: 20px;">
+            <div
+                class="col-xs-4 dc-chart"
+                dc-chart="pieChart"
+                dc-width="180"
+                dc-height="180"
+                dc-radius="80"
+                dc-dimension="type"
+                dc-group="typeGroup">
+                <strong>Transactions by Type</strong><a class="reset">reset</a>
+                <div class="clearfix"></div>
+            </div>
+
+            <div
+                class="col-xs-4 dc-chart"
+                dc-chart="pieChart"
+                dc-width="180"
+                dc-height="180"
+                dc-radius="80"
+                dc-dimension="merchant"
+                dc-group="merchantGroup">
+                <strong>Transactions by Merchant Name</strong><a class="reset">reset</a>
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="col-xs-4 dc-chart"
+                dc-chart="pieChart"
+                dc-width="180"
+                dc-height="180"
+                dc-radius="80"
+                dc-dimension="description"
+                dc-group="descriptionGroup">
+                <strong>Transactions by Description</strong><a class="reset">reset</a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <table
+                class="table table-hover dc-data-table"
+                dc-chart="dataTable"
+                dc-dimension="dateDimension"
+                dc-group="tableGroup"
+                dc-size="20"
+                dc-post-setup-chart="tablePostSetupChart">
+                    <thead>
+                        <tr class="header">
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Merchant Name</th>
+                            <th>Category</th>
+                            <th>Type</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+            </table>
+        </div>
+    </div>
+</div>

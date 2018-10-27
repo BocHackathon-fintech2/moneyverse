@@ -1,0 +1,597 @@
+{
+	"toDate": "2018-07-27",
+	"transactions": [
+	  {
+		"amount": -7.93,
+		"currency": "GBP",
+		"description": "MS JANE DOE",
+		"meta": {
+		  "provider_transaction_category": "TFR"
+		},
+		"timestamp": "2018-10-27T00:00:00+00:00",
+		"transaction_category": "TRANSFER",
+		"transaction_classification": [],
+		"transaction_id": "bf45209a906ef4f6bc97bb47553d5892",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": 50.59,
+		"currency": "GBP",
+		"description": "CIRCLE UK TRADING REFUND",
+		"meta": {
+		  "provider_transaction_category": "DEP"
+		},
+		"timestamp": "2018-10-27T00:00:00+00:00",
+		"transaction_category": "CREDIT",
+		"transaction_classification": [],
+		"transaction_id": "19334549191d566cc5be676c84f90152",
+		"transaction_type": "CREDIT"
+	  },
+	  {
+		"amount": 15.86,
+		"currency": "GBP",
+		"description": "MS JANE DOE",
+		"meta": {
+		  "provider_transaction_category": "TFR"
+		},
+		"timestamp": "2018-10-27T00:00:00+00:00",
+		"transaction_category": "TRANSFER",
+		"transaction_classification": [],
+		"transaction_id": "e9e052efbb0500860d1409cf6751d95a",
+		"transaction_type": "CREDIT"
+	  },
+	  {
+		"amount": -20.56,
+		"currency": "GBP",
+		"description": "DVLA LICENSE",
+		"meta": {
+		  "provider_transaction_category": "DD"
+		},
+		"timestamp": "2018-10-27T00:00:00+00:00",
+		"transaction_category": "DIRECT_DEBIT",
+		"transaction_classification": [],
+		"transaction_id": "2cdffbf24cd99f4aeb7c78f81b466c54",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -2.99,
+		"currency": "GBP",
+		"description": "E&L INSURANCE",
+		"meta": {
+		  "provider_transaction_category": "DD"
+		},
+		"timestamp": "2018-10-27T00:00:00+00:00",
+		"transaction_category": "DIRECT_DEBIT",
+		"transaction_classification": [],
+		"transaction_id": "0f4a39f52ff779546ea180d90c8115f9",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -23.62,
+		"currency": "GBP",
+		"description": "TESCO ONLINE SHOPPING",
+		"meta": {
+		  "provider_transaction_category": "DD"
+		},
+		"timestamp": "2018-10-27T00:00:00+00:00",
+		"transaction_category": "DIRECT_DEBIT",
+		"transaction_classification": [],
+		"transaction_id": "7d03e49b1c98b32f976da4099424889d",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -7.56,
+		"currency": "GBP",
+		"description": "PAYPAL EBAY",
+		"merchant_name": "EBAY",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-27T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Shopping",
+		  "General"
+		],
+		"transaction_id": "b8ca3215bfef587bb1302d908767d4ee",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": 70,
+		"currency": "GBP",
+		"description": "CASHBACK",
+		"meta": {
+		  "provider_transaction_category": "CSH"
+		},
+		"timestamp": "2018-10-25T00:00:00+00:00",
+		"transaction_category": "CASH",
+		"transaction_classification": [],
+		"transaction_id": "a681b135ac54dfb9527adb6ff3281adc",
+		"transaction_type": "CREDIT"
+	  },
+	  {
+		"amount": -24.5,
+		"currency": "GBP",
+		"description": "MENS HEALTH SUBSCRIPTION",
+		"meta": {
+		  "provider_transaction_category": "DD"
+		},
+		"timestamp": "2018-10-25T00:00:00+00:00",
+		"transaction_category": "DIRECT_DEBIT",
+		"transaction_classification": [],
+		"transaction_id": "752d20f1197024e0a6f0cfbc8f2341c2",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -10,
+		"currency": "GBP",
+		"description": "OUTGOING DD",
+		"meta": {
+		  "provider_transaction_category": "DD"
+		},
+		"timestamp": "2018-10-25T00:00:00+00:00",
+		"transaction_category": "DIRECT_DEBIT",
+		"transaction_classification": [],
+		"transaction_id": "1a7769971c1446cef49c739a8a38d45d",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -0.41,
+		"currency": "GBP",
+		"description": "SAVE THE CHANGE",
+		"meta": {
+		  "provider_transaction_category": "BP"
+		},
+		"timestamp": "2018-10-25T00:00:00+00:00",
+		"transaction_category": "BILL_PAYMENT",
+		"transaction_classification": [],
+		"transaction_id": "3c8810533c90a1ab38febe7c7f0fae50",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -36.59,
+		"currency": "GBP",
+		"description": "AMAZON PLC",
+		"merchant_name": "AMAZON",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-25T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Shopping",
+		  "General"
+		],
+		"transaction_id": "6c52185adb4fb640f64d8da6e803dc68",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -0.5,
+		"currency": "GBP",
+		"description": "SAVE THE CHANGE",
+		"meta": {
+		  "provider_transaction_category": "BP"
+		},
+		"timestamp": "2018-10-25T00:00:00+00:00",
+		"transaction_category": "BILL_PAYMENT",
+		"transaction_classification": [],
+		"transaction_id": "b20b160a10f24a803a5206ed90d25dee",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -10.5,
+		"currency": "GBP",
+		"description": "WWW.BINGO.COM",
+		"merchant_name": "BINGO",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-25T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Gambling",
+		  "Casino"
+		],
+		"transaction_id": "df752c866e0493ac1e72e494bb19fc0b",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -30,
+		"currency": "GBP",
+		"description": "MORSES CLUB LTD",
+		"merchant_name": "MORSES CLUB",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-23T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Personal Services",
+		  "Financial Services"
+		],
+		"transaction_id": "1b88919cb6046cfdf52c4bca8c0c1bc8",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": 32.5,
+		"currency": "GBP",
+		"description": "ANYVAN LTD",
+		"meta": {
+		  "provider_transaction_category": "FPI"
+		},
+		"timestamp": "2018-10-23T00:00:00+00:00",
+		"transaction_category": "CREDIT",
+		"transaction_classification": [],
+		"transaction_id": "19b56cfd898ac6117e474d4ca729dfc1",
+		"transaction_type": "CREDIT"
+	  },
+	  {
+		"amount": -100,
+		"currency": "GBP",
+		"description": "LNK ATM WITHDRAWAL",
+		"meta": {
+		  "provider_transaction_category": "CPT"
+		},
+		"timestamp": "2018-10-23T00:00:00+00:00",
+		"transaction_category": "ATM",
+		"transaction_classification": [],
+		"transaction_id": "f166545fcc8bb46c8b9cdd809edb64a0",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -1.57,
+		"currency": "GBP",
+		"description": "SAVE THE CHANGE",
+		"meta": {
+		  "provider_transaction_category": "BP"
+		},
+		"timestamp": "2018-10-23T00:00:00+00:00",
+		"transaction_category": "BILL_PAYMENT",
+		"transaction_classification": [],
+		"transaction_id": "9d146aa8d88f74e121de1ba94cd8ea68",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -20,
+		"currency": "GBP",
+		"description": "WWW.METROBANK.COM",
+		"merchant_name": "METROBANK",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-23T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Fees & Charges",
+		  "Bank Fee"
+		],
+		"transaction_id": "e71bc8873ed425e23a0eae1e2ef30c34",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -5,
+		"currency": "GBP",
+		"description": "AMAZON INT'L",
+		"merchant_name": "AMAZON",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-22T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Shopping",
+		  "General"
+		],
+		"transaction_id": "783de34fa0557c41560f2fb91bfc5245",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -0.01,
+		"currency": "GBP",
+		"description": "SAVE THE CHANGE",
+		"meta": {
+		  "provider_transaction_category": "BP"
+		},
+		"timestamp": "2018-10-22T00:00:00+00:00",
+		"transaction_category": "BILL_PAYMENT",
+		"transaction_classification": [],
+		"transaction_id": "b210cd3e81a1f478551699dad92576a7",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -39.25,
+		"currency": "GBP",
+		"description": "TESCO MOBILE LTD",
+		"merchant_name": "TESCO MOBILE",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-22T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Bills and Utilities",
+		  "Mobile Phone"
+		],
+		"transaction_id": "ad2ce3aac41a18642f0f5b8c8019dac4",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -36.59,
+		"currency": "GBP",
+		"description": "PAYPAL WWW.EBAY.COM",
+		"merchant_name": "EBAY",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-22T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Shopping",
+		  "General"
+		],
+		"transaction_id": "70a1ec0b6f5a57b413c98fd189b7c09d",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -36.59,
+		"currency": "GBP",
+		"description": "OAKAM LIMITED",
+		"merchant_name": "OAKHAM",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-22T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Uncategorized"
+		],
+		"transaction_id": "77e17f9ccdf0f5972c23211ade990bcb",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -150,
+		"currency": "GBP",
+		"description": "REGENDA REDWING",
+		"merchant_name": "REGENDA",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-20T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Investments",
+		  "Real-estate"
+		],
+		"transaction_id": "05dd055a0178930154045a1fca7ac766",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": 22.42,
+		"currency": "GBP",
+		"description": "WORKING TAX CREDIT",
+		"meta": {
+		  "provider_transaction_category": "BGC"
+		},
+		"timestamp": "2018-10-20T00:00:00+00:00",
+		"transaction_category": "CREDIT",
+		"transaction_classification": [],
+		"transaction_id": "2ba44166cd0bfa5ea863cdc08bc25a52",
+		"transaction_type": "CREDIT"
+	  },
+	  {
+		"amount": -550,
+		"currency": "GBP",
+		"description": "PARKRETAIL.CO.UK",
+		"merchant_name": "PARK GROUP",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-20T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Shopping",
+		  "General"
+		],
+		"transaction_id": "4d41d88de87ef7bd7edd7e76a6f9aaac",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": 345.13,
+		"currency": "GBP",
+		"description": "CHILD TAX CREDIT",
+		"meta": {
+		  "provider_transaction_category": "BGC"
+		},
+		"timestamp": "2018-10-20T00:00:00+00:00",
+		"transaction_category": "CREDIT",
+		"transaction_classification": [],
+		"transaction_id": "ff77151c849cafbb5292de83e9bde7b2",
+		"transaction_type": "CREDIT"
+	  },
+	  {
+		"amount": -7.99,
+		"currency": "GBP",
+		"description": "AMAZON PRIME",
+		"merchant_name": "AMAZON",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-19T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Shopping",
+		  "General"
+		],
+		"transaction_id": "0f2323dfa54e786c47dba0794b4b6e0a",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": 450,
+		"currency": "GBP",
+		"description": "CLEVELEYS.COM",
+		"meta": {
+		  "provider_transaction_category": "DEP"
+		},
+		"timestamp": "2018-10-19T00:00:00+00:00",
+		"transaction_category": "CREDIT",
+		"transaction_classification": [],
+		"transaction_id": "605ce819093e2f80a1e7c1260eb2d6cc",
+		"transaction_type": "CREDIT"
+	  },
+	  {
+		"amount": 82.21,
+		"currency": "GBP",
+		"description": "CIRCLE UK TRADING",
+		"meta": {
+		  "provider_transaction_category": "FPI"
+		},
+		"timestamp": "2018-10-18T00:00:00+00:00",
+		"transaction_category": "CREDIT",
+		"transaction_classification": [],
+		"transaction_id": "3bc0684b6fa82bd3c9072296071cbec3",
+		"transaction_type": "CREDIT"
+	  },
+	  {
+		"amount": 137.6,
+		"currency": "GBP",
+		"description": "MR JOHN SMITH",
+		"meta": {
+		  "provider_transaction_category": "BGC"
+		},
+		"timestamp": "2018-10-17T00:00:00+00:00",
+		"transaction_category": "CREDIT",
+		"transaction_classification": [],
+		"transaction_id": "d0f08881b31262e5296cffac055e6e52",
+		"transaction_type": "CREDIT"
+	  },
+	  {
+		"amount": -12.73,
+		"currency": "GBP",
+		"description": "AA INSURANCE",
+		"meta": {
+		  "provider_transaction_category": "DD"
+		},
+		"timestamp": "2018-10-17T00:00:00+00:00",
+		"transaction_category": "DIRECT_DEBIT",
+		"transaction_classification": [],
+		"transaction_id": "f7bc3f9fd81c0e5509713a709fc7dda0",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -40,
+		"currency": "GBP",
+		"description": "AXA WEALTH LTD",
+		"meta": {
+		  "provider_transaction_category": "DD"
+		},
+		"timestamp": "2018-10-17T00:00:00+00:00",
+		"transaction_category": "DIRECT_DEBIT",
+		"transaction_classification": [],
+		"transaction_id": "28afd8faad92b61fe682a78347b64ec6",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -20,
+		"currency": "GBP",
+		"description": "MORRISONS PETROL",
+		"merchant_name": "W M MORRISONS PETROL STATIONCATEGORIES GAS STATION",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-17T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Auto & Transport",
+		  "Gas & Fuel"
+		],
+		"transaction_id": "5b29b8bee4c905682ad711beaffc89cc",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -0.63,
+		"currency": "GBP",
+		"description": "SAVE THE CHANGE",
+		"meta": {
+		  "provider_transaction_category": "BP"
+		},
+		"timestamp": "2018-10-17T00:00:00+00:00",
+		"transaction_category": "BILL_PAYMENT",
+		"transaction_classification": [],
+		"transaction_id": "8e6a3c274c1dedd9f69bb00369669620",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -6.37,
+		"currency": "GBP",
+		"description": "TAILSCOM",
+		"merchant_name": "TAILS.COM",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-17T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Shopping",
+		  "Pets"
+		],
+		"transaction_id": "39d600bc53c6fa270013e54034bcf14c",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -32,
+		"currency": "GBP",
+		"description": "ASDA STOES LTD",
+		"merchant_name": "ASDA",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-15T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [
+		  "Shopping",
+		  "Groceries"
+		],
+		"transaction_id": "e48a969566c32beb53c2b7f898b2b306",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -0.55,
+		"currency": "GBP",
+		"description": "SAVE THE CHANGE",
+		"meta": {
+		  "provider_transaction_category": "BP"
+		},
+		"timestamp": "2018-10-15T00:00:00+00:00",
+		"transaction_category": "BILL_PAYMENT",
+		"transaction_classification": [],
+		"transaction_id": "19b6438d3a4bc710b348c9f9ec386af3",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -15.45,
+		"currency": "GBP",
+		"description": "AMAZON BLACK FRIDAY",
+		"meta": {
+		  "provider_transaction_category": "DEB"
+		},
+		"timestamp": "2018-10-15T00:00:00+00:00",
+		"transaction_category": "PURCHASE",
+		"transaction_classification": [],
+		"transaction_id": "2fd69df33ac384df0b7428d7bdec1308",
+		"transaction_type": "DEBIT"
+	  },
+	  {
+		"amount": -0.5,
+		"currency": "GBP",
+		"description": "SAVE THE CHANGE",
+		"meta": {
+		  "provider_transaction_category": "BP"
+		},
+		"timestamp": "2018-10-15T00:00:00+00:00",
+		"transaction_category": "BILL_PAYMENT",
+		"transaction_classification": [],
+		"transaction_id": "4b6368fcd08557f0f2073996ea8db269",
+		"transaction_type": "DEBIT"
+	  }
+	]
+  }
