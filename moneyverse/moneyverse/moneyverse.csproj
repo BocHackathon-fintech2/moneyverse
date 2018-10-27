@@ -170,6 +170,9 @@
     <Compile Include="Helpers\TransferwiseHelper.cs" />
     <Compile Include="Helpers\TrueLayerHelper.cs" />
     <Compile Include="Models\Boc\BocAccount.cs" />
+    <Compile Include="Models\Transferwise\TransferwiseProfile.cs" />
+    <Compile Include="Models\Transferwise\TransferwiseQuote.cs" />
+    <Compile Include="Models\Transferwise\TransferwiseRecipient.cs" />
     <Compile Include="Models\TrueLayer\TrueLayerAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

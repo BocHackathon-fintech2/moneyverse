@@ -17,8 +17,8 @@ angular.module('sbAdminApp')
                 if (response && response.data && response.data != 'false') {
                     $scope.state = 'targetaccount'
                     $scope.title = 'Select Target Account'
+                    $scope.stop();
                 }
-                
             })
         }
         $scope.allAccounts = {};
@@ -68,6 +68,24 @@ angular.module('sbAdminApp')
             $scope.stop();
         });
 
+        $scope.getQuote = function () {
+            if (!$scope.amount)
+                $scope.targetAmount = undefined;
+            $http.get('Transferwise/Quote?amount=' + $scope.amount).then(function (response) {
+                if (response && response.data && response.data.targetAmount)
+                    $scope.targetAmount = response.data.targetAmount
+            })
+        }
+
+        $scope.completeTransfer = function () {
+            $http.get('Transferwise/CompleteTransfer?accountNumber=' + $scope.targetAccount.account_number.number + '&sortCode=' + $scope.targetAccount.account_number.sort_code).then(function (response) {
+                $scope.state = 'transfercomplete';
+                $scope.title = 'Transfer Complete';
+            })
+        }
+
         $scope.reloadWatch();
+
+
     }]
 );

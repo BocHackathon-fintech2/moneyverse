@@ -88,18 +88,54 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             <h4 class="modal-title" id="myModalLabel">{{title}}</h4>
                         </div>
-                        <div class="modal-body" style="height:200px;">
+                        <div class="modal-body" style="height:250px;">
                             <div ng-show="state == 'login'">
                                 <a ng-href="{{url}}" class="btn btn-success" target="_blank">Login with Transferwise <i class="fa fa-exchange fa-fw"></i></a>
                                 <button type="button" class="btn btn-default" ng-click="stop()">Cancel</button>
                             </div>
                             <div ng-show="state == 'targetaccount'">
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a href="#moneyverse-tab" data-toggle="tab">To another moneyverse account</a>
+                                    </li>
+                                    <li>
+                                        <a href="#iban-tab" data-toggle="tab">Using IBAN</a>
+                                    </li>
+                                </ul>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div class="tab-pane fade in active" id="moneyverse-tab">
+                                        <from role="form">
+                                            <div class="form-group" style="margin-top:24px;">
+                                                <label>Select Target Account</label>
+                                                <select class="form-control" ng-model="targetAccount" ng-options="value as value.display_name group by value.bank_name for (key, value) in allAccounts"></select>
+                                            </div>
+                                        </from>
+                                        <button type="button" class="btn btn-success pull-right" ng-click="state='quote';title='Select Amount'">Next</button>
+                                    </div>
+                                    <div class="tab-pane fade" id="iban-tab">
+                                        <from role="form">
+                                            <div class="form-group" style="margin-top:24px;">
+                                                <label>IBAN Number</label>
+                                                <input type="text" class="form-control" />
+                                            </div>
+                                        </from>
+                                        <button type="button" class="btn btn-success pull-right" ng-click="state='quote';title='Select Amount'">Next</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-show="state == 'quote'">
                                 <from role="form">
-                                    <div class="form-group">
-                                        <label>Select Target Account</label>
-                                        <select class="form-control" ng-model="targetAccount" ng-options="value as value.display_name group by value.bank_name for (key, value) in allAccounts"></select>
+                                    <div class="form-group" style="margin-top:24px;">
+                                        <label>Send this amount in <strong>EUR</strong></label>
+                                        <input type="text" class="form-control" ng-model="amount" ng-model-options="{debounce: 1000}" ng-change="getQuote()" />
+                                    </div>
+                                    <div class="form-group" style="margin-top:24px;">
+                                        <label>The recipient will get this in <strong>GBP</strong></label>
+                                        <input type="text" class="form-control" ng-disabled="true" ng-model="targetAmount"/>
                                     </div>
                                 </from>
+                                <button type="button" class="btn btn-success pull-right" ng-click="completeTransfer()">Complete Transfer</button>
                             </div>
                         </div>
                     </div>
