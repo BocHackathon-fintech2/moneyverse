@@ -21,5 +21,13 @@ namespace moneyverse.Controllers
             MyCache.cache["Transferwise.access_token"] = TransferwiseHelper.GetTokenFromTransferwise(code);
             return Redirect("http://localhost:50033/tabclose.html");
         }
+
+        [HttpGet]
+        [Route("Transferwise/GetTokenActive")]
+        public bool GetTokenActive()
+        {
+            var token = MyCache.cache["Transferwise.access_token"];
+            return (token == null) ? false : true;
+        }
     }
 }

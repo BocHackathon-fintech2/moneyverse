@@ -91,6 +91,15 @@
                         <div class="modal-body" style="height:200px;">
                             <div ng-show="state == 'login'">
                                 <a ng-href="{{url}}" class="btn btn-success" target="_blank">Login with Transferwise <i class="fa fa-exchange fa-fw"></i></a>
+                                <button type="button" class="btn btn-default" ng-click="stop()">Cancel</button>
+                            </div>
+                            <div ng-show="state == 'targetaccount'">
+                                <from role="form">
+                                    <div class="form-group">
+                                        <label>Select Target Account</label>
+                                        <select class="form-control" ng-model="targetAccount" ng-options="value as value.display_name group by value.bank_name for (key, value) in allAccounts"></select>
+                                    </div>
+                                </from>
                             </div>
                         </div>
                     </div>
