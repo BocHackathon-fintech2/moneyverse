@@ -101,8 +101,7 @@
                         </div>
                         <div class="modal-body" style="height:250px;">
                             <div ng-show="state == 'login'">
-                                <a ng-href="{{url}}" class="btn btn-success" target="_blank">Login with Transferwise <i class="fa fa-exchange fa-fw"></i></a>
-                                <button type="button" class="btn btn-default" ng-click="stop()">Cancel</button>
+                                <a ng-href="{{url}}" class="btn btn-success" target="_blank" style="margin-top:69px;margin-left:116px;font-size:x-large;">Login with Transferwise <i class="fa fa-lock fa-fw"></i></a>
                             </div>
                             <div ng-show="state == 'targetaccount'">
                                 <ul class="nav nav-tabs">
@@ -122,7 +121,7 @@
                                                 <select class="form-control" ng-model="targetAccount" ng-options="value as value.display_name group by value.bank_name for (key, value) in allAccounts"></select>
                                             </div>
                                         </from>
-                                        <button type="button" class="btn btn-success pull-right" ng-click="state='quote';title='Select Amount'">Next</button>
+                                        <button type="button" class="btn btn-success pull-right" style="margin-top:36px;" ng-click="state='quote';title='Select Amount'">Next</button>
                                     </div>
                                     <div class="tab-pane fade" id="iban-tab">
                                         <from role="form">

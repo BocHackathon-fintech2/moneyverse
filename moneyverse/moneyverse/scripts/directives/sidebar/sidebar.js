@@ -29,10 +29,10 @@ angular.module('sbAdminApp')
             $scope.banks = [];
             $http.get('TrueLayer/GetAccounts').then(function (response) {
                 if (response && response.data && response.data !== 'null') {
-                    $scope.banks.push({
+                    $scope.banks[0] = {
                         name: 'Mock Bank',
                         accounts: response.data
-                    })
+                    }
                     $rootScope.banks = $scope.banks;
                     setBanksIfNothingIsDefined()
                 }
@@ -42,12 +42,11 @@ angular.module('sbAdminApp')
                     response.data.forEach(function (item) {
                         item.display_name = item.accountName;
                     })
-                    $scope.banks.push({
+                    $scope.banks[1] = {
                         name: 'Bank of Cyprus',
                         accounts: response.data
-                    })
+                    }
                     $rootScope.banks = $scope.banks;
-                    setBanksIfNothingIsDefined()
                 }
             })
         $scope.selectedMenu = 'dashboard';
