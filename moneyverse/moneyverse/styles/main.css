@@ -101,3 +101,6 @@ rect.extent {
 text-decoration: none;
 background-color: #eee;
 }
+.deselected{
+    background-color: #e5e5e5;
+}

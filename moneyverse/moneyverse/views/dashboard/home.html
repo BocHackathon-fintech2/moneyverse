@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="jumbotron">
-                    <h4>Please select an account from the menu on the left</h4>
-                    <p>You can use the <strong>Add Bank</strong> button to add your accounts and start exploring your finances!</p>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#addBankModal">Add a Bank</button>
+                    <p style="margin-top:15px;">to add your accounts and start exploring your finances!</p>
                 </div>
             </div>
             <!-- /.col-lg-12 -->
@@ -17,13 +17,13 @@
                 <h1 class="page-header">{{selectedBank.name}} - {{selectedAccount.display_name}}</h1>
                 <div class="col-lg-6">
                     <div class="col-lg-8">
-                        <h2>Transactions to {{date}}</h2>
+                        <h2>Transactions</h2>
                     </div>
 
-                    <div class="col-lg-6" style="margin-bottom: 20px;">
+                    <div class="col-lg-7" style="margin-bottom: 20px;">
                         <div class="dc-data-count" dc-chart="dataCount" dc-dimension="ndx" dc-group="all">
                             <span class="filter-count"></span>&nbsp;selected
-                            out of&nbsp;<span class="total-count"></span>&nbsp;records | <a ng-click="resetAll()">Reset All</a>
+                            out of&nbsp;<span class="total-count"></span>&nbsp;records | <a href="" ng-click="resetAll()">Reset All</a>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
             <div class="row" style="margin-top: 20px;">
                 <div dc-chart="barChart"
                         dc-name="'volumeChart'"
-                        dc-width="1400"
+                        dc-width="1250"
                         dc-height="70"
                         dc-margins="{top: 0, right: 50, bottom: 20, left: 40}"
                         dc-dimension="day"

@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.min.css">
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.min.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link href="bower_components/dcjs/dc.css" rel="stylesheet" />
     <!-- endbuild -->
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -71,16 +72,17 @@
             <div ui-view></div>
 
             <div ng-controller="addBankCtrl" class="modal" id="addBankModal" tabindex="-1" role="dialog" aria-labelledby="addBankModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog" style="width:700px;">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             <h4 class="modal-title" id="myModalLabel">Add your bank account</h4>
                         </div>
                         <div class="modal-body" style="height:200px;">
-                            <a ng-click="reloadWatch('truelayer')" href="https://auth.truelayer.com/?response_type=code&client_id=demoapp-zke4&redirect_uri=http://localhost:50033/TrueLayer/VerifyCode&scope=info%20accounts%20balance%20transactions&nonce=nonce&state=state&enable_mock=true" target="_blank" class="btn btn-primary"><i class="fa fa-bank fa-fw"></i> TrueLayer</a>
-                            <a ng-click="reloadWatch('boc')" ng-href="{{url}}" class="btn btn-primary" target="_blank"><i class="fa fa-bank fa-fw"></i> Bank of Cyprus</a>
-                            <button type="button" class="btn btn-default" ng-click="stop()">Cancel</button>
+                            <div style="margin:47px;padding-left:26px;">
+                                <a ng-click="reloadWatch('truelayer')" href="https://auth.truelayer.com/?response_type=code&client_id=demoapp-zke4&redirect_uri=http://localhost:50033/TrueLayer/VerifyCode&scope=info%20accounts%20balance%20transactions&nonce=nonce&state=state&enable_mock=true" target="_blank" class="btn btn-primary" style="font-size:xx-large;"><i class="fa fa-bank fa-fw"></i> TrueLayer</a>
+                                <a ng-click="reloadWatch('boc')" ng-href="{{url}}" class="btn btn-primary" target="_blank" style="font-size:xx-large;margin-left:10px;"><i class="fa fa-bank fa-fw"></i> Bank of Cyprus</a>
+                            </div>
                         </div>
                     </div>
                     <!-- /.modal-content -->

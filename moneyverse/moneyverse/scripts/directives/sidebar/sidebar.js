@@ -21,6 +21,8 @@ angular.module('sbAdminApp')
                     if (!$rootScope.selectedBank) {
                         $rootScope.selectedBank = $scope.banks[0];
                         $rootScope.selectedAccount = $scope.banks[0].accounts[0];
+                        $scope.selectedBank = $rootScope.selectedBank;
+                        $scope.selectedAccount = $rootScope.selectedAccount;
                     }
             }
 
@@ -63,6 +65,8 @@ angular.module('sbAdminApp')
             $scope.selectAccount = function (account, bank) {
                 $rootScope.selectedAccount = account;
                 $rootScope.selectedBank = bank;
+                $scope.selectedBank = $rootScope.selectedBank;
+                $scope.selectedAccount = $rootScope.selectedAccount;
             }
         
         $scope.multiCheck = function(y){
