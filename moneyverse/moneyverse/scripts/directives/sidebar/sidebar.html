@@ -2,15 +2,18 @@
     <div class="sidebar-nav navbar-collapse" style="position:fixed;">
         <ul class="nav in" id="side-menu" style="margin-top:25px;margin-left:8px;">
             <li ng-show="!!selectedBank">
-                <button class="btn btn-success" style="margin-left:15px;margin-bottom:20px;" data-toggle="modal" data-target="#addBankModal">Add another Bank</button>
+                <button class="btn btn-success" style="margin-left:37px;margin-bottom:20px;" data-toggle="modal" data-target="#addBankModal">Add another Bank</button>
             </li>
             <li class="active" ng-repeat="bank in banks">
-                <span>
-                    <i class="fa fa-bank fa-fw"></i> {{bank.name}}
+                <span ng-show="bank.name != 'Bank of Cyprus'" style="font-size:large;">
+                    {{bank.name}} <i class="fa fa-bank fa-fw"></i>
                 </span>
+                <img ng-show="bank.name == 'Bank of Cyprus'" src="../../../Images/BankOfCyprus.png" style="width:150px;" />
                 <ul class="nav nav-second-level">
                     <li ng-repeat="account in bank.accounts" ng-class="{active: selectedBank == bank && selectedAccount == account}">
-                        <a ui-sref="dashboard.home" ng-click="selectAccount(account, bank)">{{account.display_name}}</a>
+                        <a ui-sref="dashboard.home" ng-click="selectAccount(account, bank)">
+                            <span>{{account.display_name}}</span>
+                        </a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
