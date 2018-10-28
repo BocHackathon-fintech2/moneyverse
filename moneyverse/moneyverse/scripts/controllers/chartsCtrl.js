@@ -158,6 +158,10 @@ angular.module("sbAdminApp").controller("DCCtrl", [
                     s.resetAll();
                     $scope.$apply();
                 }
+
+                s.export = function(id) {
+                    saveSvgAsPng(document.querySelectorAll("#" + id + " svg")[0], "diagram.png");
+                }
         });
         })
     }
