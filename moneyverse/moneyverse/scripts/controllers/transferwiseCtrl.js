@@ -69,11 +69,21 @@ angular.module('sbAdminApp')
         });
 
         $scope.getQuote = function () {
-            if (!$scope.amount)
+            if (!$scope.amount) {
                 $scope.targetAmount = undefined;
+                $scope.availableBalance = undefined;
+                $scope.balanceError = undefined;
+            }
             $http.get('Transferwise/Quote?amount=' + $scope.amount).then(function (response) {
-                if (response && response.data && response.data.targetAmount)
+                if (response && response.data && response.data.targetAmount) {
                     $scope.targetAmount = response.data.sourceAmount
+                    $http.get('Boc/GetAvailableBalance?account=' + $rootScope.selectedAccount.accountId).then(function (response) {
+                        if (response) {
+                            $scope.availableBalance = response.data;
+                            $scope.balanceError = $scope.availableBalance < $scope.targetAmount;
+                        }
+                    })
+                }
             })
         }
 

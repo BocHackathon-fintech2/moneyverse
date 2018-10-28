@@ -95,13 +95,13 @@
             </div>
 
             <div ng-controller="transferwiseCtrl" class="modal" id="transferwiseModal" tabindex="-1" role="dialog" aria-labelledby="addBankModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog" style="height:320px;">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             <h4 class="modal-title" id="myModalLabel">{{title}}</h4>
                         </div>
-                        <div class="modal-body" style="height:250px;">
+                        <div class="modal-body" style="height:268px;">
                             <div ng-show="state == 'login'">
                                 <a ng-href="{{url}}" class="btn btn-success" target="_blank" style="margin-top:69px;margin-left:116px;font-size:x-large;">
                                     <span>Login with </span>
@@ -148,9 +148,14 @@
                                     <div class="form-group" style="margin-top:24px;">
                                         <label>Send this amount in <strong>EUR</strong></label>
                                         <input type="text" class="form-control" ng-disabled="true" ng-model="targetAmount"/>
+                                        <div ng-show="balanceError === true" style="color:red;">Available balance is {{availableBalance}} EUR</div>
                                     </div>
                                 </from>
-                                <button type="button" class="btn btn-success pull-right" ng-click="completeTransfer()">Complete Transfer</button>
+                                <button type="button" class="btn btn-success pull-right" ng-click="completeTransfer()" ng-disabled="balanceError === true">Complete Transfer</button>
+                            </div>
+                            <div ng-show="state == 'transfercomplete'">
+                                <div style="font-size: 36px;margin-top: 40px;margin-left: 125px;">Transfer Complete!</div>
+                                <div style="text-align:center;font-size:large;"><a href="https://sandbox.transferwise.tech/history#" target="_blank">Click here to check the details of your transfer <i class="fa fa-external-link fa-fw"></i></a></div>
                             </div>
                         </div>
                     </div>

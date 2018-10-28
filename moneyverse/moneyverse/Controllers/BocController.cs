@@ -36,12 +36,19 @@ namespace moneyverse.Controllers
         public List<BocAccount> GetAccounts()
         {
             var token = MyCache.cache["Boc.access_token"];
-            if(token != null)
+            if (token != null)
             {
                 var a = BocHelper.GetAccounts();
                 return a;
             }
-            return null;    
+            return null;
+        }
+
+        [HttpGet]
+        [Route("Boc/GetAvailableBalance")]
+        public double GetAvailableBalance(string account)
+        {
+            return BocHelper.GetAvailableBalance(account);
         }
     }
 

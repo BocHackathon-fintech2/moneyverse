@@ -12,7 +12,7 @@ namespace moneyverse.Helpers
 {
     public static class BocHelper
     {
-        public static Func<string> GetToken = () => (string) MyCache.cache["TrueLayer.access_token"];
+        public static Func<string> GetToken = () => (string) MyCache.cache["Boc.access_token"];
 
         public static string GetTokenFromBoc()
         {
@@ -86,6 +86,23 @@ namespace moneyverse.Helpers
             request.AddHeader("Content-Type", "application/json");
             IRestResponse response = client.Execute(request);
             return JsonConvert.DeserializeObject<List<BocAccount>>(response.Content);
+        }
+
+        public static double GetAvailableBalance(string account)
+        {
+            var client = new RestClient($"https://sandbox-apis.bankofcyprus.com/df-boc-org-sb/sb/psd2/v1/accounts/{account}?client_id=f4e3ccf4-53e8-420e-90e2-fd30b39b3813&client_secret=wE1tT2oQ1mL1jP8eS5fI6jX2xJ8xN8wH3bS1yU5bD5oV8oH8vP");
+            var request = new RestRequest(Method.GET);
+            request.AddHeader("Postman-Token", "95cbfb98-f530-40ed-9dc0-efb8beb9dbf1");
+            request.AddHeader("cache-control", "no-cache");
+            request.AddHeader("timeStamp", "1540722745");
+            request.AddHeader("journeyId", "abc");
+            request.AddHeader("tppId", "abc");
+            request.AddHeader("originUserId", "abc");
+            request.AddHeader("subscriptionId", (string)MyCache.cache["Boc.subscriptionId"]);
+            request.AddHeader("Authorization", $"Bearer {GetToken()}");
+            request.AddHeader("Content-Type", "application/json");
+            IRestResponse response = client.Execute(request);
+            return JsonConvert.DeserializeObject<List<BocAccountDetails>>(response.Content).First().balances.Find(x => x.balanceType == "AVAILABLE").amount;
         }
     }
 }

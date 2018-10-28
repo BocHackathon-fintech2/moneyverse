@@ -42,7 +42,7 @@ namespace moneyverse.Controllers
         public List<TrueLayerTransaction> GetTransactions(string accountId, bool isTruelayer)
         {
             if (!isTruelayer)
-                return new List<TrueLayerTransaction> { new TrueLayerTransaction { description = "Athienitis", timestamp = DateTime.Now, amount = -100, merchant_name = "Athienitis", transaction_category = "Groceries", transaction_classification = new List<string> { "Groceries" } } };
+                return new List<TrueLayerTransaction> { new TrueLayerTransaction { currency = "EUR", description = "Athienitis", timestamp = DateTime.Now, amount = -100, merchant_name = "Athienitis", transaction_category = "Groceries", transaction_classification = new List<string> { "Groceries" } } };
             return TrueLayerHelper.GetTransactions(accountId);
         }
     }
