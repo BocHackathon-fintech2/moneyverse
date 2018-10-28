@@ -14,18 +14,15 @@ angular.module("sbAdminApp").controller("DCCtrl", [
         $rootScope.$watch('selectedAccount', function (n) {
             d3.json("TrueLayer/GetTransactions?accountId=" + $rootScope.selectedAccount.account_id + "&isTruelayer=" + ($rootScope.selectedBank.name != 'Bank of Cyprus'), function (data) {
 
-                    var dateFormat2 = d3.time.format("%Y-%m-%dT%H:%M:%S+02:00");
-                    var dateFormat3 = d3.time.format("%Y-%m-%dT%H:%M:%S+03:00");
+                    var dateFormat = d3.time.format("%Y-%m-%dT%H:%M:%S");
                     var numberFormat = d3.format(".2f");
                     var s = $scope;
 
                     s.date = data.toDate;
 
-                    data.forEach(function (d) {
-                        if (d.timestamp[21] == '2')
-                            d.dd = dateFormat2.parse(d.timestamp);
-                        else
-                            d.dd = dateFormat3.parse(d.timestamp);
+                data.forEach(function (d) {
+                        d.timestamp = d.timestamp.substr(0, 19);
+                        d.dd = dateFormat.parse(d.timestamp);
                         d.day = d3.time.day(d.dd);
                         d.month = d3.time.month(d.dd);
                     });

@@ -78,9 +78,11 @@
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             <h4 class="modal-title" id="myModalLabel">Add your bank</h4>
                         </div>
-                        <div class="modal-body" style="height:200px;">
+                        <div class="modal-body" style="height:210px;">
                             <div style="margin:47px;padding-left:54px;">
-                                <a ng-click="reloadWatch('truelayer')" href="https://auth.truelayer.com/?response_type=code&client_id=demoapp-zke4&redirect_uri=http://localhost:50033/TrueLayer/VerifyCode&scope=info%20accounts%20balance%20transactions&nonce=nonce&state=state&enable_mock=true" target="_blank" class="btn btn-default" style="font-size:xx-large;color:navy"><i class="fa fa-bank fa-fw"></i> TrueLayer</a>
+                                <a ng-click="reloadWatch('truelayer')" href="https://auth.truelayer.com/?response_type=code&client_id=demoapp-zke4&redirect_uri=http://localhost:50033/TrueLayer/VerifyCode&scope=info%20accounts%20balance%20transactions&nonce=nonce&state=state&enable_mock=true" target="_blank" class="btn btn-default" style="font-size:xx-large;color:navy" tooltip="TrueLayer is a service that lets you connect to your bank. It boasts a large selection of international and local banks." tooltip-placement="bottom">
+                                    <img src="Images/Picture1.png" style="width:192px;" />
+                                </a>
                                 <a ng-click="reloadWatch('boc')" ng-href="{{url}}" class="btn btn-default" target="_blank" style="font-size:xx-large;margin-left:10px;">
                                     <img src="Images/BankOfCyprus.png" style="width:215px;" />
                                 </a>
@@ -101,7 +103,10 @@
                         </div>
                         <div class="modal-body" style="height:250px;">
                             <div ng-show="state == 'login'">
-                                <a ng-href="{{url}}" class="btn btn-success" target="_blank" style="margin-top:69px;margin-left:116px;font-size:x-large;">Login with Transferwise <i class="fa fa-lock fa-fw"></i></a>
+                                <a ng-href="{{url}}" class="btn btn-success" target="_blank" style="margin-top:69px;margin-left:116px;font-size:x-large;">
+                                    <span>Login with </span>
+                                    <img src="Images/TransferWise.png" style="width:169px;margin-top:-15px;" /> <i class="fa fa-lock fa-fw"></i>
+                                </a>
                             </div>
                             <div ng-show="state == 'targetaccount'">
                                 <ul class="nav nav-tabs">
