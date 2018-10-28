@@ -36,9 +36,11 @@
             </div>
         </div>
 
+        <button type="button" class="btn btn-info pull-right" ng-click="export('bar-chart')">Export</button>
+
         <div class="row" style="font-size: 11px; margin-top: 20px; margin-bottom: 20px;" >
             <div class="row" style="margin-top: 20px;">
-                <div dc-chart="barChart"
+                <div id="bar-chart" dc-chart="barChart"
                         dc-name="'volumeChart'"
                         dc-width="1250"
                         dc-height="70"
@@ -74,8 +76,9 @@
 
             <div class="row" style="margin-bottom: 20px;">
                 <div class="col-xs-6">
+                    <button type="button" class="btn btn-info pull-right" ng-click="export('pieChart-1')">Export</button>
                     <strong style="padding-left: 90px; padding-top: 40px; display: block">Transactions by Category</strong><br />
-                    <div class="col-xs-6 dc-chart" style="margin-top: 15px;"
+                    <div id="pieChart-1" class="col-xs-6 dc-chart" style="margin-top: 15px;"
                         dc-chart="pieChart"
                         dc-width="360"
                         dc-height="360"
@@ -87,8 +90,9 @@
 
 
                 <div class="col-xs-6">
+                    <button type="button" class="btn btn-info pull-right" ng-click="export('row-chart')">Export</button>
                     <strong style="padding-left: 90px; padding-top: 40px; display: block">Day of Week</strong><br />
-                    <div class="dc-chart" style="padding-left: 80px"
+                    <div id="row-chart" class="dc-chart" style="padding-left: 80px"
                         dc-chart="rowChart"
                         dc-width="360"
                         dc-height="360"
@@ -106,8 +110,9 @@
 
             <div class="row" style=" margin-bottom: 20px;">
                 <div class="col-xs-6">
+                    <button type="button" class="btn btn-info pull-right" ng-click="export('pieChart-2')">Export</button>
                     <strong style="padding-left: 90px; padding-top: 40px; display: block">Transactions by Type</strong><br />
-                    <div class="dc-chart"
+                    <div id="pieChart-2" class="dc-chart"
                         dc-chart="pieChart"
                         dc-width="360"
                         dc-height="360"
@@ -118,8 +123,9 @@
                 </div>
 
                 <div class="col-xs-6">
+                    <button type="button" class="btn btn-info pull-right" ng-click="export('pieChart-3')">Export</button>
                     <strong  style="padding-left: 90px; padding-top: 40px; display: block">Transactions by Merchant Name</strong><br />
-                    <div class="dc-chart"
+                    <div id="pieChart-3" class="dc-chart"
                         dc-chart="pieChart"
                         dc-width="360"
                         dc-height="360"
